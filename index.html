@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ListaLista: Home</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="shortcut icon" href="img/1916-3.png" type="image/x-icon">
+</head>
+<body>
+    
+    <div id="app">
+        <div id= "auth" class="center">
+            <img src="https://images.emojiterra.com/google/noto-emoji/unicode-15/color/512px/1f9e0.png" alt="Logo" width="150" height="150">
+            <h1>Pede ifood Pede</h1>
+        </div>
+        <div id="auth" >
+            <form id="authForm">
+                <h3 id="authFormTitle">Acesse sua conta para continuar</h3>
+                <p>
+                    <input type="text" id="email" placeholder="flavindopneu@email.com" required>
+                </p>
+                <p>
+                    <input type="password" id="password" placeholder="insira a semha agui" required>
+                </p>
+
+                <button type="submit" id="submitAuthForm">Entrar</button>
+            </form>
+
+            <form id="regForm" class="startHiden">
+                <h3 id="authFormTitle">Insira seus dados para se cadastrar</h3>
+                <p>
+                    <input type="text" id="name" placeholder="Seu Nome Completo" required>
+                </p>
+                <p>
+                    <input type="text" id="email" placeholder="seu@email.com.br" required>
+                </p>
+                <p>
+                    <input type="password" id="password" placeholder="insira a semha agui" required>
+                </p>
+                <p>
+                    <input type="password" id="passwordCheck" placeholder="Confima a semha agui" required>
+                </p>
+
+                <button type="submit" id="submitAuthForm">Cadastrar</button>
+
+                
+            </form>
+
+            
+                <p id="access" class="startHiden">Já possui uma conta?
+                    <button onclick="toggleToAccess()" class="alternative">Acesse a sua conta</button>
+                </p>
+            
+            <p id="register">Não possui uma conta?
+                <button onclick="toggleToRegister()" class="alternative">Cadastrar uma nova conta</button>
+            </p>
+        </div>
+    </div>
+
+    <div id="footer">
+        <p> made by <a href="https://github.com/guigayzin" target="_blank">@guigayzin</a></p>
+    </div>
+    <script src="js/utils.js"></script>
+</body>
+</html>
