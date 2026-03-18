@@ -68,16 +68,14 @@
 
             <hr>
             <div id="userInfo">
-                firebase.auth().onAuthStateChanged(function(user) { const nome = user.displayName ? user.displayName :
-                user.email;
-                document.getElementById("userInfo").innerHTML = `<p>Olá, ${nome}</p>`;
-            }
+                <p id="userName"> </p>
+                <button class="alternative" onclick="signOut()">Log Out</button>
             </div>
         </div>
     </div>
 
     <div id="footer">
-        <p> made by <a href="https://github.com/guigayzin" target="_blank">@guigayzin</a></p>
+        <p> made by <a href="https://github.com/ggsantos-exe" target="_blank">@ggsantos-exe</a></p>
     </div>
     <script src="js/utils.js"></script>
 

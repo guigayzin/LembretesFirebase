@@ -1,8 +1,12 @@
 var authForm = document.getElementById('authForm');
+var regForm = document.getElementById('regForm');
+var userContent = document.getElementById('user');
+var authContent = document.getElementById('auth');
 var title = document.getElementById('authFormTitle');
 var register = document.getElementById('register');
 var access = document.getElementById('access');
 var loading = document.getElementById('loading');
+var userName = document.getElementById('userName')
 
 function toggleToRegister() {
   authForm.submitAuthForm.innerHTML = 'Cadastrar'
@@ -10,7 +14,7 @@ function toggleToRegister() {
   hideItem(authForm)
   hideItem(register)
   showItem(access)
-  showItem(document.getElementById('regForm'))
+  showItem(regForm)
 }
 
 function toggleToAccess() {
@@ -29,4 +33,24 @@ function showItem(element) {
 
 function hideItem(element) {
   element.style.display = 'none'
+}
+
+function showAuth(){
+  hideItem(userContent)
+  showItem(authContent)
+}
+
+function showUserContent(user){
+  authForm.email.value = ""
+  authForm.password.value = ""
+  regForm.name.value = ""
+  regForm.email.value = ""
+  regForm.password.value = ""
+  regForm.passwordCheck.value = ""
+  
+  userName.innerHTML = 'Olá senhor '+ user.displayName + ' tudo bem?'
+  hideItem(authContent)
+  showItem(userContent)
+  
+
 }

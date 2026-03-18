@@ -3,7 +3,10 @@ authForm.onsubmit = function (event) {
     showItem(loading)
     event.preventDefault();
     firebase.auth().signInWithEmailAndPassword(authForm.email.value, authForm.password.value)
-        .catch(error => console.log('Erro no login', error, alert('Erro no login')));
+        .catch(error =>
+            alert('Erro no login', error),
+            hideItem(loading)
+        )
 };
 
 regForm.onsubmit = function (event) {
@@ -47,10 +50,14 @@ regForm.onsubmit = function (event) {
 firebase.auth().onAuthStateChanged(function (user) {
     hideItem(loading)
     if (user) {
-        console.log("Usuário está autenticado no sistema")
-        console.log(user)
+        showUserContent(user)
     }
     else {
-        console.log("usuário não autenticado")
+        showAuth()
     }
 })
+function signOut(){
+    firebase.auth().signOut().catch(function (error) {
+        alert('falha ao realizar logout', error)
+    })
+}
