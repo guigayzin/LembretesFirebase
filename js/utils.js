@@ -9,6 +9,7 @@ var loading = document.getElementById('loading');
 var userName = document.getElementById('userName');
 var sendEmailValidationDiv = document.getElementById('sendEmailValidationDiv');
 var emailValidator = document.getElementById('emailValidator');
+var actionCodeSeting = { url: 'http://127.0.0.1:5500/'}
 
 function toggleToRegister() {
   authForm.submitAuthForm.innerHTML = 'Cadastrar'

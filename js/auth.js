@@ -1,4 +1,6 @@
 
+firebase.auth().languageCode = 'pt-BR'
+
 authForm.onsubmit = function (event) {
     showItem(loading)
     event.preventDefault();
@@ -65,7 +67,7 @@ function signOut(){
 function sendEmailValidation() {
   showItem(loading)
   var user = firebase.auth().currentUser
-  user.sendEmailVerification().then(function () {
+  user.sendEmailVerification(actionCodeSeting).then(function () {
     alert('E-mail  enviado para ' + user.email + '! Siga as instruções para finalizar a confirmação')
   }).catch(function (error) {
     alert('Falha ao enviar confirmação ' + error)
