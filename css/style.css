@@ -75,6 +75,10 @@ button {
     border-radius: 50px;
 }
 
+button:hover{
+    opacity: 50%;
+}
+
 h3 {
     margin: 4px;
     font-size: 25px;
@@ -83,4 +87,17 @@ h3 {
 a{
     font-family: monospace;
     color: #4CAF50;
+}
+
+.google-logo {
+  width: 100px;
+  height: auto;
+  vertical-align: middle;
+  cursor: pointer;
+}
+
+#userIMG {
+    width: 40px;
+    height: auto;
+    border-radius: 100;
 }

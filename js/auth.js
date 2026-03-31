@@ -94,3 +94,16 @@ function resetPassword() {
         alert("Email é necessário para redefinir a senha.");
     }       
 }
+
+function googleAccess(){
+    showItem(loading)
+    var provider = new firebase.auth.GoogleAuthProvider();
+    firebase.auth().signInWithPopup(provider)
+    .catch((error) => {
+        alert("Erro ao acessar com Google: " + error.message);
+    }).finally(() => {
+        hideItem(loading)
+    });
+
+
+}
