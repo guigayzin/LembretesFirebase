@@ -6,6 +6,7 @@ var title = document.getElementById('authFormTitle');
 var register = document.getElementById('register');
 var access = document.getElementById('access');
 var loading = document.getElementById('loading');
+var userEmail = document.getElementById('userEmail');
 var userName = document.getElementById('userName');
 var sendEmailValidationDiv = document.getElementById('sendEmailValidationDiv');
 var emailValidator = document.getElementById('emailValidator');
@@ -65,7 +66,8 @@ function showUserContent(user){
   regForm.password.value = ""
   regForm.passwordCheck.value = ""
   
-  userName.innerHTML = 'Olá senhor '+ user.displayName + ' tudo bem?'
+  userEmail.innerHTML = user.email
+  userName.innerHTML = user.displayName
   hideItem(authContent)
   showItem(userContent)
   

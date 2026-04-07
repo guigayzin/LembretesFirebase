@@ -75,13 +75,26 @@
 
             <hr>
             <div id="userInfo">
-              
-                <p id="userName"> </p>
-                <p id="emailValidator"></p>
-                <div id="sendEmailValidationDiv">
-                    <button id="btnEmailValidator" onclick="sendEmailValidation()">Validar email</button>
+
+                <div class="user-header">
+                    <img id="userPhoto" src="" alt="Foto do usuário">
+
+                    <div class="user-text">
+                        <p id="userName"></p>
+                        <p id="userEmail"></p>
+                    </div>
                 </div>
+
+                <p id="emailValidator"></p>
+
+                <div id="sendEmailValidationDiv">
+                    <button id="btnEmailValidator" onclick="sendEmailValidation()">
+                        Validar email
+                    </button>
+                </div>
+
                 <button class="alternative" onclick="signOut()">Log Out</button>
+
             </div>
         </div>
     </div>

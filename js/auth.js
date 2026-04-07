@@ -53,57 +53,62 @@ firebase.auth().onAuthStateChanged(function (user) {
     hideItem(loading)
     console.log(user)
     if (user) {
+        const photo = user.photoURL || "https://via.placeholder.com/150";
+        if (photo) {
+            document.getElementById("userPhoto").src = photo;
+        }
+        console.log("Foto:", user.photoURL);
         showUserContent(user)
     }
     else {
         showAuth()
     }
 })
-function signOut(){
+function signOut() {
     firebase.auth().signOut().catch(function (error) {
         alert('falha ao realizar logout', error)
     })
 }
 function sendEmailValidation() {
-  showItem(loading)
-  var user = firebase.auth().currentUser
-  user.sendEmailVerification(actionCodeSeting).then(function () {
-    alert('E-mail  enviado para ' + user.email + '! Siga as instruções para finalizar a confirmação')
-  }).catch(function (error) {
-    alert('Falha ao enviar confirmação ' + error)
-  }).finally(function () {
-    hideItem(loading)
-  })
+    showItem(loading)
+    var user = firebase.auth().currentUser
+    user.sendEmailVerification(actionCodeSeting).then(function () {
+        alert('E-mail  enviado para ' + user.email + '! Siga as instruções para finalizar a confirmação')
+    }).catch(function (error) {
+        alert('Falha ao enviar confirmação ' + error)
+    }).finally(function () {
+        hideItem(loading)
+    })
 }
 
 function resetPassword() {
-  var email = prompt("Digite seu email para receber as instruções de redefinição de senha:");
+    var email = prompt("Digite seu email para receber as instruções de redefinição de senha:");
     if (email) {
-       showItem(loading);
-        firebase.auth().sendPasswordResetEmail(email, actionCodeSeting) 
-            .then(function() {
+        showItem(loading);
+        firebase.auth().sendPasswordResetEmail(email, actionCodeSeting)
+            .then(function () {
                 alert('E-mail de redefinição de senha enviado para ' + email + '! Siga as instruções para redefinir sua senha.');
             })
-            .catch(function(error) {
+            .catch(function (error) {
                 alert('Falha ao enviar email de redefinição de senha: ' + error.message);
             })
-            .finally(function() {
-              hideItem(loading)
+            .finally(function () {
+                hideItem(loading)
             });
     } else {
         alert("Email é necessário para redefinir a senha.");
-    }       
+    }
 }
 
-function googleAccess(){
+function googleAccess() {
     showItem(loading)
     var provider = new firebase.auth.GoogleAuthProvider();
     firebase.auth().signInWithPopup(provider)
-    .catch((error) => {
-        alert("Erro ao acessar com Google: " + error.message);
-    }).finally(() => {
-        hideItem(loading)
-    });
+        .catch((error) => {
+            alert("Erro ao acessar com Google: " + error.message);
+        }).finally(() => {
+            hideItem(loading)
+        });
 
 
 }
