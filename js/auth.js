@@ -57,7 +57,6 @@ firebase.auth().onAuthStateChanged(function (user) {
         if (photo) {
             document.getElementById("userPhoto").src = photo;
         }
-        console.log("Foto:", user.photoURL);
         showUserContent(user)
     }
     else {
@@ -110,5 +109,20 @@ function googleAccess() {
             hideItem(loading)
         });
 
+}
+
+function deleteUser() {
+    var confirmation = confirm("deseja mesmo fazer isso malokeiro?")
+    if (confirm) {
+        showItem(loading)
+        firebase.auth().currentUser.delete().then(function () {
+            alert("Conta removida com sucesso =) ")
+            }).catch(function (error) {
+                alert("Houve um erro ao remover sua conta contate o suporte " + error
+                )
+            }).finally(function () {
+                hideItem(loading)
+            })
+    }
 
 }
