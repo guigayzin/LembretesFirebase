@@ -12,7 +12,12 @@ var sendEmailValidationDiv = document.getElementById('sendEmailValidationDiv');
 var emailValidator = document.getElementById('emailValidator');
 var passwordReset = document.getElementById('passwordReset');
 var googleLogin = document.getElementById('googleLogin');
-var actionCodeSeting = { url: 'http://127.0.0.1:5500/' }
+var listaForm = document.getElementById('listaForm');
+
+var actionCodeSeting = { url: 'https://http://127.0.0.1:5500/' }
+
+var db = firebase.database()
+var dbRefUser = db.ref('users')
 
 function toggleToRegister() {
   authForm.submitAuthForm.innerHTML = 'Cadastrar'
@@ -122,4 +127,6 @@ function showError(prefix, error) {
       alert(prefix + ' ' + error.message)
   }
   hideItem(loading)
+
 }
+
