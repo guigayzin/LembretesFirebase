@@ -12,8 +12,10 @@ var sendEmailValidationDiv = document.getElementById('sendEmailValidationDiv');
 var emailValidator = document.getElementById('emailValidator');
 var passwordReset = document.getElementById('passwordReset');
 var googleLogin = document.getElementById('googleLogin');
+var itemName = document.getElementById('itemName');
 var listaForm = document.getElementById('listaForm');
-
+var listaNum = document.getElementById('listaNum');
+var ulLista = document.getElementById('ulLista')
 var actionCodeSeting = { url: 'https://http://127.0.0.1:5500/' }
 
 var db = firebase.database()
@@ -74,6 +76,9 @@ function showUserContent(user) {
   userEmail.innerHTML = user.email
   userName.innerHTML = user.displayName
   hideItem(authContent)
+  dbRefUser.child(firebase.auth().currentUser.uid).on('value', function (snapshot){
+    fillLista(snapshot)
+  })
   showItem(userContent)
 }
 

@@ -94,16 +94,22 @@
                 </div>
 
                 <button class="alternative" onclick="signOut()">Sair</button>
-                                <button class="alert" onclick="deleteUser()">Excluir conta</button>
+                <button class="alert" onclick="deleteUser()">Excluir conta</button>
 
 
             </div>
+
             <div>
                 <form id="listaForm">
                     <h1 id="listaTitle">Inserir dados no BD</h1>
                     <input type="text" id="itemName" placeholder="bota alguma coisa aqui tipo uma lista">
                     <button type="submit" id="submit">Inserir</button>
                 </form>
+            </div>
+            <hr>
+            <div id="lista">
+                <h3 id="listaNum">Nenhum item adicionado ao BD meu grande</h3>
+                <ul id="ulLista"></ul>
             </div>
         </div>
     </div>
@@ -112,7 +118,7 @@
         <p> made by <a href="https://github.com/ggsantos-exe" target="_blank">@ggsantos-exe</a></p>
 
     </div>
-    
+
 
 
     <script src="https://www.gstatic.com/firebasejs/7.8.1/firebase-app.js"></script>
@@ -120,12 +126,12 @@
     <script src="https://www.gstatic.com/firebasejs/7.8.1/firebase-firestore.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.8.1/firebase-storage.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.8.1/firebase-database.js"></script>
-    
+
     <script src="js/firebase.js"></script>
     <script src="js/utils.js"></script>
     <script src="js/auth.js"></script>
     <script src="js/lista.js"></script>
-    
+
 </body>
 
 </html>
