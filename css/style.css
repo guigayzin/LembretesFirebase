@@ -75,6 +75,20 @@ button {
     border-radius: 50px;
 }
 
+.btn-danger{
+    background-color: #ff0000;
+    border: none;
+    color: white;
+    padding: 4px 2px;
+    text-align: center;
+    text-decoration: dashed;
+    display: inline-block;
+    font-size: 85%;
+    margin: 1px 1px;
+    cursor: pointer;
+    border-radius: 50px;
+}
+
 button:hover{
     opacity: 50%;
 }
@@ -142,4 +156,13 @@ a{
 
     background-color: red;
 }
+
+li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-right: 100px; 
+}
+
+
 
